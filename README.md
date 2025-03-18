@@ -11,6 +11,7 @@ So, make sure you have Hilt & kapt imported in your projects via below check-lis
 1. Add Hilt and kapt plugins in `app/build.gradle` file
    ```groovy
    apply plugin: 'dagger.hilt.android.plugin'
+   apply plugin: 'org.jetbrains.kotlin.android'
    apply plugin: 'kotlin-kapt'
    ```
 2. Add Hilt & `common-utils` dependencies in `app/build.gradle` file
@@ -19,8 +20,9 @@ So, make sure you have Hilt & kapt imported in your projects via below check-lis
    implementation 'com.google.dagger:hilt-android:2.55'
    kapt 'com.google.dagger:hilt-compiler:2.55'
    ```
-3. Add Hilt gradle plugin classpath to project's `build.gradle` file
+3. Add Hilt & Kotlin gradle plugin classpaths to project's `build.gradle` file
    ```groovy
+   classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.0"
    classpath "com.google.dagger:hilt-android-gradle-plugin:2.55"
    ```
 4. Add `@HiltAndroidApp` to your Application class
