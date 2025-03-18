@@ -9,6 +9,7 @@ appcompat = "1.7.0"
 material = "1.12.0"
 hilt = "2.55"
 kotlinAndroidPlugin = "1.9.24"
+grgit = "5.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -24,5 +25,6 @@ hilt-gradle-plugin = { group = "com.google.dagger", name = "hilt-android-gradle-
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinAndroidPlugin" }
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+grgit = { group = "org.ajoberstar.grgit", name = "grgit-gradle", version.ref = "grgit" }
 
 [plugins]
