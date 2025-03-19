@@ -37,6 +37,12 @@ So, make sure you have Hilt & kapt imported in your projects via below check-lis
    ```
 7. Now you're ready to use the Text to Speech function
 
+## How to release a new version?
+
+1. Update versionCode, versionName in `utils/build.gradle` file and merge to `main`
+2. Trigger `Release` task in Github Actions on `main` branch
+3. Draft a new Release in https://github.com/elimu-ai/common-utils/releases
+
 ---
 
 <p align="center">
