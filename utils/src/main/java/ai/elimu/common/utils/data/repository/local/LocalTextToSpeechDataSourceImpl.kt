@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
+import java.util.Locale
 import javax.inject.Inject
 
 class LocalTextToSpeechDataSourceImpl @Inject constructor(
@@ -33,5 +34,13 @@ class LocalTextToSpeechDataSourceImpl @Inject constructor(
 
     override fun playSilentUtterance(durationInMs: Long, queueMode: Int, utteranceId: String?): Int {
         return tts.playSilentUtterance(durationInMs, queueMode, utteranceId)
+    }
+
+    override fun setSpeechRate(speechRate: Float): Int {
+        return tts.setSpeechRate(speechRate)
+    }
+
+    override fun setLanguage(loc: Locale?): Int {
+        return tts.setLanguage(loc)
     }
 }

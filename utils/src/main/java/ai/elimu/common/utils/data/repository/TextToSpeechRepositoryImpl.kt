@@ -3,6 +3,7 @@ package ai.elimu.common.utils.data.repository
 import ai.elimu.common.utils.data.model.tts.QueueMode
 import ai.elimu.common.utils.data.repository.local.LocalTextToSpeechDataSource
 import android.speech.tts.UtteranceProgressListener
+import java.util.Locale
 import javax.inject.Inject
 
 class TextToSpeechRepositoryImpl @Inject constructor(
@@ -31,5 +32,13 @@ class TextToSpeechRepositoryImpl @Inject constructor(
         utteranceId: String?
     ): Int {
         return localDataSource.playSilentUtterance(durationInMs, queueMode, utteranceId)
+    }
+
+    override fun setSpeechRate(speechRate: Float): Int {
+        return localDataSource.setSpeechRate(speechRate)
+    }
+
+    override fun setLanguage(loc: Locale?): Int {
+        return localDataSource.setLanguage(loc)
     }
 }
