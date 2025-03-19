@@ -7,7 +7,7 @@ plugins {
     id 'org.ajoberstar.grgit'
 }
 
-def libVersion = '1.0.1-SNAPSHOT'
+def libVersion = '1.0.2'
 def group = "ai.elimu.common"
 def artifact = "utils"
 
@@ -18,7 +18,7 @@ android {
     defaultConfig {
         minSdk 26
 
-        versionCode 1000001
+        versionCode 1000002
         versionName libVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
