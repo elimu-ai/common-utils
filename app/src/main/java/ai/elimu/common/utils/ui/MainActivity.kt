@@ -1,5 +1,6 @@
 package ai.elimu.common.utils.ui
 
+import ai.elimu.common.utils.checkIfAppstoreIsInstalled
 import ai.elimu.common.utils.data.model.tts.QueueMode
 import ai.elimu.common.utils.databinding.ActivityMainBinding
 import ai.elimu.common.utils.viewmodel.TextToSpeechViewModel
@@ -52,5 +53,8 @@ class MainActivity: AppCompatActivity() {
             }
 
         })
+
+        val isAppstoreInstalled = checkIfAppstoreIsInstalled("ai.elimu.appstore.debug")
+        Log.d(TAG, "isAppstoreInstalled: $isAppstoreInstalled")
     }
 }

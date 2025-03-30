@@ -6,6 +6,7 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
+import androidx.core.net.toUri
 
 fun Context.isPackageInstalled(packageName: String,
                                launchPackage: String,
@@ -31,6 +32,34 @@ fun Context.isPackageInstalled(packageName: String,
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Log.e("isPackageInstalled", "startActivity exception: " + e.message)
+                }
+            }
+            .setCancelable(false)
+            .create().show()
+        return false
+    }
+}
+
+fun Context.checkIfAppstoreIsInstalled(appStoreId: String): Boolean {
+    try {
+        val packageInfoAppstore: PackageInfo =
+            packageManager.getPackageInfo(appStoreId, 0)
+        Log.i("checkIfAppstoreIsInstalled",
+            "packageInfoAppstore.versionCode: " + packageInfoAppstore.versionCode)
+        return true
+    } catch (e: PackageManager.NameNotFoundException) {
+        Log.e("checkIfAppstoreIsInstalled","getPackageInfo exception: " + e.message, e)
+        AlertDialog.Builder(this)
+            .setMessage(this.getString(R.string.appstore_needed))
+            .setPositiveButton(this.getString(R.string.download)
+            ) { _, _ ->
+                val openDownloadPage = Intent(Intent.ACTION_VIEW,
+                    "https://github.com/elimu-ai/appstore/releases".toUri())
+                try {
+                    startActivity(openDownloadPage)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Log.e("checkIfAppstoreIsInstalled", "startActivity exception: " + e.message)
                 }
             }
             .setCancelable(false)
