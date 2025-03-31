@@ -52,6 +52,7 @@ dependencies {
     implementation libs.material
     implementation libs.androidx.lifecycle.viewmodel
     implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.elimu.model
     implementation libs.hilt.android
     kapt libs.hilt.compiler
     testImplementation libs.junit

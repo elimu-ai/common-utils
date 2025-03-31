@@ -1,14 +1,21 @@
 package ai.elimu.common.utils.ui
 
+import android.R
 import ai.elimu.common.utils.checkIfAppstoreIsInstalled
 import ai.elimu.common.utils.data.model.tts.QueueMode
 import ai.elimu.common.utils.databinding.ActivityMainBinding
 import ai.elimu.common.utils.viewmodel.TextToSpeechViewModel
 import ai.elimu.common.utils.viewmodel.TextToSpeechViewModelImpl
+import android.os.Build
 import android.os.Bundle
 import android.speech.tts.UtteranceProgressListener
 import android.util.Log
+import android.view.Window
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
@@ -54,7 +61,36 @@ class MainActivity: AppCompatActivity() {
 
         })
 
+        window.apply {
+            setStatusBarColorCompat(R.color.white)
+        }
+
         val isAppstoreInstalled = checkIfAppstoreIsInstalled("ai.elimu.appstore.debug")
         Log.d(TAG, "isAppstoreInstalled: $isAppstoreInstalled")
+    }
+}
+
+fun Window.setStatusBarColorCompat(color: Int) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+
+        this.decorView.setBackgroundColor(ContextCompat.getColor(this.context, color))
+
+        // Apply window insets to avoid overlapping with system bars
+        ViewCompat.setOnApplyWindowInsetsListener(
+            this.decorView.findViewById(R.id.content)
+        ) { v, insets ->
+            val systemBarsInsets =
+                insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(
+                v.getPaddingLeft(),
+                systemBarsInsets.top,
+                v.getPaddingRight(),
+                systemBarsInsets.bottom
+            )
+            WindowInsetsCompat.CONSUMED
+        }
+    } else {
+        this.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        this.statusBarColor = ContextCompat.getColor(this.context, color)
     }
 }
