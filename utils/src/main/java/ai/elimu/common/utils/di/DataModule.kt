@@ -1,8 +1,8 @@
-
 package ai.elimu.common.utils.di
 
 import ai.elimu.common.utils.data.repository.TextToSpeechRepository
 import ai.elimu.common.utils.data.repository.TextToSpeechRepositoryImpl
+import ai.elimu.common.utils.data.repository.language.LanguageProvider
 import ai.elimu.common.utils.data.repository.local.LocalTextToSpeechDataSource
 import ai.elimu.common.utils.data.repository.local.LocalTextToSpeechDataSourceImpl
 import android.content.Context
@@ -24,7 +24,6 @@ abstract class DataModule {
 
     @Binds
     abstract fun bindLocalTTSDataSource(dataSource: LocalTextToSpeechDataSourceImpl): LocalTextToSpeechDataSource
-
 }
 
 @Module
@@ -32,6 +31,13 @@ abstract class DataModule {
 internal object TextToSpeechModule {
 
     @Provides
-    fun providesTextToSpeech(@ApplicationContext context: Context): TextToSpeech =
-        TextToSpeechWrapper(context).tts
+    fun providesTextToSpeech(
+        @ApplicationContext context: Context,
+        languageProvider: LanguageProvider
+    ): TextToSpeech =
+        TextToSpeechWrapper(
+            context,
+            languageProvider.getLanguage(),
+            languageProvider.getContentProviderId()
+        ).tts
 }
