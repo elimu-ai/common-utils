@@ -26,6 +26,12 @@ android {
             buildConfigField("String", "CONTENT_PROVIDER_APPLICATION_ID", '"ai.elimu.content_provider"')
             signingConfig signingConfigs.debug
         }
+
+        debug {
+            manifestPlaceholders = [contentProviderApplicationId: "ai.elimu.content_provider.debug"]
+            buildConfigField("String", "CONTENT_PROVIDER_APPLICATION_ID", '"ai.elimu.content_provider.debug"')
+        }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
