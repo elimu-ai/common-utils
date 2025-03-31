@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appstore_needed">You need to download elimu.ai Appstore first.</string>
+    <string name="appstore_needed">You need to download the elimu.ai Appstore first.</string>
     <string name="download">Download</string>
 </resources>
