@@ -4,10 +4,6 @@ apply plugin: 'kotlin-kapt'
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
 
-    ext {
-        kotlin_version = '1.9.24'
-    }
-
     repositories {
         google()
         mavenCentral()
