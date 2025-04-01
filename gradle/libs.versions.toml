@@ -11,6 +11,7 @@ hilt = "2.55"
 kotlinAndroidPlugin = "1.9.24"
 grgit = "5.0.0"
 elimuModel = "model-2.0.84"
+elimuProvider = "1.2.32"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,5 +29,6 @@ android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", ve
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 grgit = { group = "org.ajoberstar.grgit", name = "grgit-gradle", version.ref = "grgit" }
 elimu-model = { group = "com.github.elimu-ai", name = "model", version.ref = "elimuModel" }
+elimu-provider = { group = "com.github.elimu-ai", name = "content-provider", version.ref = "elimuProvider" }
 
 [plugins]
