@@ -2,6 +2,7 @@ package ai.elimu.common.utils.di
 
 import ai.elimu.common.utils.toLanguage
 import ai.elimu.common.utils.toLocale
+import ai.elimu.content_provider.utils.SharedDataKeys
 import android.content.Context
 import android.net.Uri
 import android.speech.tts.TextToSpeech
@@ -22,7 +23,9 @@ class TextToSpeechWrapper(context: Context, language: String, contentProviderId:
         cursor?.use {
             if (it.moveToNext()) {
                 val id = it.getInt(it.getColumnIndexOrThrow("_id"))
-                contentProviderLanguage = it.getString(it.getColumnIndexOrThrow("language"))
+                contentProviderLanguage = it.getString(
+                    it.getColumnIndexOrThrow(SharedDataKeys.KEY_LANGUAGE)
+                )
                 Log.d(TAG, "ContentProvider language: $id - $contentProviderLanguage")
             }
         }
