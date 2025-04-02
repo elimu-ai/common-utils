@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class LanguageProviderImpl @Inject constructor(): LanguageProvider {
     override fun getLanguage(): String {
-        return ""
+        return "tha"
     }
 
     override fun getContentProviderId(): String {
