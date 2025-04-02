@@ -19,7 +19,7 @@ android {
         minSdk 26
 
         versionCode 1000004
-        versionName libVersion
+        versionName '1.0.4'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
