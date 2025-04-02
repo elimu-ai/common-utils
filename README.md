@@ -39,7 +39,7 @@ So, make sure you have Hilt & kapt imported in your projects via below check-lis
 
 ## How to release a new version?
 
-1. Update versionCode, versionName in `utils/build.gradle` file and merge to `main`
+1. Update versionCode, versionName in `utils/build.gradle` file by increment either major/minor/patch number and merge to `main` (Do not remove the `SNAPSHOT` suffix)
 2. Trigger [`Release`](https://github.com/elimu-ai/common-utils/actions/workflows/gradle-release.yml) task in Github Actions on `main` branch
 3. Draft a new Release in https://github.com/elimu-ai/common-utils/releases
 
