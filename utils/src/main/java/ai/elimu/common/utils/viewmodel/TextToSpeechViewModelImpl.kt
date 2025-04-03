@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import java.util.Locale
 import javax.inject.Inject
 
 @HiltViewModel
@@ -125,9 +124,5 @@ class TextToSpeechViewModelImpl @Inject constructor(
 
     override fun setSpeechRate(speechRate: Float): Int {
         return textToSpeechRepository.setSpeechRate(speechRate)
-    }
-
-    override fun setLanguage(loc: Locale?): Int {
-        return textToSpeechRepository.setLanguage(loc)
     }
 }

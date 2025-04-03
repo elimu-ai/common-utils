@@ -2,7 +2,6 @@ package ai.elimu.common.utils.data.repository
 
 import ai.elimu.common.utils.data.model.tts.QueueMode
 import android.speech.tts.UtteranceProgressListener
-import java.util.Locale
 
 interface TextToSpeechRepository {
     suspend fun speak(text: CharSequence, queueMode: QueueMode, utteranceId: String)
@@ -11,5 +10,4 @@ interface TextToSpeechRepository {
     fun setOnUtteranceProgressListener(listener: UtteranceProgressListener): Int
     fun playSilentUtterance(durationInMs: Long, queueMode: Int, utteranceId: String?): Int
     fun setSpeechRate(speechRate: Float): Int
-    fun setLanguage(loc: Locale?): Int
 }
