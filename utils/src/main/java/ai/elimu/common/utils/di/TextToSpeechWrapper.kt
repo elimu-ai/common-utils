@@ -35,11 +35,11 @@ class TextToSpeechWrapper(context: Context, language: String, contentProviderId:
             Log.d(TAG, "init TextToSpeech DONE. status: $status")
             if (status == TextToSpeech.SUCCESS) {
                 tts.setSpeechRate(0.5f)
-                if (language.isNotEmpty()) {
-                    tts.setLanguage(language.toLanguage().toLocale())
-                } else {
-                    tts.setLanguage(contentProviderLanguage.toLanguage().toLocale())
+
+                val sttLanguage = language.ifEmpty {
+                    contentProviderLanguage
                 }
+                tts.setLanguage(sttLanguage.lowercase().toLanguage().toLocale())
             } else {
                 Log.e(TAG, "TTS initialization failed with status: $status")
             }
