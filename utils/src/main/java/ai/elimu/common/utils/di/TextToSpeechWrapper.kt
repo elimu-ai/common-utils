@@ -8,7 +8,7 @@ import android.net.Uri
 import android.speech.tts.TextToSpeech
 import android.util.Log
 
-class TextToSpeechWrapper(context: Context, language: String, contentProviderId: String) {
+class TextToSpeechWrapper(context: Context, contentProviderId: String) {
     lateinit var tts: TextToSpeech
     private val TAG = "TextToSpeech"
 
@@ -30,16 +30,15 @@ class TextToSpeechWrapper(context: Context, language: String, contentProviderId:
             }
         }
 
-        Log.d(TAG, "init TextToSpeech START language: $language")
+        Log.d(TAG, "init TextToSpeech START language: $contentProviderLanguage")
         tts = TextToSpeech(context) { status ->
             Log.d(TAG, "init TextToSpeech DONE. status: $status")
             if (status == TextToSpeech.SUCCESS) {
                 tts.setSpeechRate(0.5f)
 
-                val sttLanguage = language.ifEmpty {
-                    contentProviderLanguage
+                if (contentProviderLanguage.isNotEmpty()) {
+                    tts.setLanguage(contentProviderLanguage.lowercase().toLanguage().toLocale())
                 }
-                tts.setLanguage(sttLanguage.lowercase().toLanguage().toLocale())
             } else {
                 Log.e(TAG, "TTS initialization failed with status: $status")
             }

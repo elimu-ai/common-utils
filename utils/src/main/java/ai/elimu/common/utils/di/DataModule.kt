@@ -59,7 +59,6 @@ internal object TextToSpeechModule {
     ): TextToSpeech =
         TextToSpeechWrapper(
             context,
-            languageProvider.getLanguage(),
             languageProvider.getContentProviderId()
         ).tts
 }
