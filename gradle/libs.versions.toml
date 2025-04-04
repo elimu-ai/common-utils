@@ -11,7 +11,7 @@ hilt = "2.55"
 kotlinAndroidPlugin = "2.0.0"
 grgit = "5.0.0"
 elimuModel = "model-2.0.84"
-elimuProvider = "1.2.32"
+elimuProvider = "1.2.34"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
