@@ -43,6 +43,13 @@ So, make sure you have Hilt & kapt imported in your projects via below check-lis
 2. Trigger [`Release`](https://github.com/elimu-ai/common-utils/actions/workflows/gradle-release.yml) task in Github Actions on `main` branch
 3. Draft a new Release in https://github.com/elimu-ai/common-utils/releases
 
+> [!IMPORTANT]
+> After you publish a new release, remember to also bump the version in all Android app repos that depend on the `utils` library:
+> * https://github.com/elimu-ai/launcher/blob/main/gradle/libs.versions.toml
+> * https://github.com/elimu-ai/kukariri/blob/main/gradle/libs.versions.toml
+> * https://github.com/elimu-ai/vitabu/blob/main/gradle/libs.versions.toml
+> * https://github.com/elimu-ai/filamu/blob/main/gradle/libs.versions.toml
+
 ---
 
 <p align="center">
