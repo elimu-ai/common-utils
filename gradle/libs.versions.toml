@@ -9,7 +9,7 @@ appcompat = "1.7.0"
 material = "1.12.0"
 hilt = "2.56.1"
 kotlinAndroidPlugin = "2.0.0"
-grgit = "5.0.0"
+grgit = "5.3.0"
 elimuModel = "model-2.0.88"
 elimuProvider = "1.2.34"
 
