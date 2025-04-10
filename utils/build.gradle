@@ -7,7 +7,7 @@ plugins {
     id 'org.ajoberstar.grgit'
 }
 
-def libVersion = '1.0.7-SNAPSHOT'
+def libVersion = '1.0.8-SNAPSHOT'
 def group = "ai.elimu.common"
 def artifact = "utils"
 
@@ -18,7 +18,7 @@ android {
     defaultConfig {
         minSdk 26
 
-        versionCode 1000007
+        versionCode 1000008
         versionName libVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -52,10 +52,10 @@ dependencies {
     implementation libs.material
     implementation libs.androidx.lifecycle.viewmodel
     implementation libs.androidx.lifecycle.runtime.ktx
-    implementation libs.elimu.model
+    implementation libs.elimu.model // https://jitpack.io/#elimu-ai/model
     implementation libs.hilt.android
     kapt libs.hilt.compiler
-    implementation libs.elimu.provider
+    implementation libs.elimu.provider // https://jitpack.io/#elimu-ai/content-provider
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
