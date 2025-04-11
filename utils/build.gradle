@@ -7,7 +7,7 @@ plugins {
     id 'org.ajoberstar.grgit'
 }
 
-def libVersion = '1.0.9-SNAPSHOT'
+def libVersion = '1.0.9'
 def group = "ai.elimu.common"
 def artifact = "utils"
 
