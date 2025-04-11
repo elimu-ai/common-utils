@@ -9,7 +9,7 @@ import android.util.Log
 
 class TextToSpeechWrapper(context: Context, contentProviderId: String) {
     lateinit var tts: TextToSpeech
-    private val TAG = "TextToSpeech"
+    private val TAG = "TextToSpeechWrapper"
 
     init {
         val uri = Uri.parse("content://" + contentProviderId
