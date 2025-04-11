@@ -39,6 +39,8 @@ class TextToSpeechWrapper(context: Context, contentProviderId: String) {
                     val language: Language = Language.valueOf(contentProviderLanguage)
                     Log.d(TAG, "language: ${language}")
                     Log.d(TAG, "language.locale: ${language.locale}")
+                    Log.d(TAG, "language.locale.language: ${language.locale.language}")
+                    Log.d(TAG, "language.locale.country: ${language.locale.country}")
                     tts.setLanguage(language.locale)
                 }
             } else {
