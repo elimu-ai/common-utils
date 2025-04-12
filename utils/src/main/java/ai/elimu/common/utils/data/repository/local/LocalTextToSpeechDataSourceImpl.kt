@@ -15,7 +15,7 @@ class LocalTextToSpeechDataSourceImpl @Inject constructor(
         val params = Bundle().apply {
             putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, utteranceId)
         }
-        Log.d("TextToSpeech", "speaking with tts language: " + tts.voice.locale)
+        Log.d("TextToSpeech", "speaking with tts language: " + tts.voice?.locale)
         tts.speak(text, queueMode.mode, params, utteranceId)
     }
 
