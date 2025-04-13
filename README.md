@@ -37,6 +37,16 @@ So, make sure you have Hilt & kapt imported in your projects via below check-lis
    ```
 7. Now you're ready to use the Text to Speech function
 
+### How to publish a snapshot for local development & testing?
+
+1. Change `libVersion`, `versionCode` and publication `version` in https://github.com/elimu-ai/common-utils/blob/main/utils/build.gradle
+2. Under `publishing` -> `repositories` block in the same Gradle script: Replace the existing `maven` repo by `mavenLocal()`
+3. Run `./gradlew clean utils:publishReleasePublicationToMavenLocal` from project's root folder
+4. In app side: Add `mavenLocal()` to `repositsories` block in `build.gradle` script
+5. Implement `ai.elimu.common:utils:$snapshot_version` in app's `build.gradle` file
+6. You're now ready to test the snapshot!
+
+
 ## How to release a new version?
 
 1. Update versionCode, versionName in `utils/build.gradle` file by increment either major/minor/patch number and merge to `main` (Do not remove the `SNAPSHOT` suffix)
