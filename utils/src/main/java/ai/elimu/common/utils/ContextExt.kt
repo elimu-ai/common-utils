@@ -24,14 +24,24 @@ fun Context.isPackageInstalled(packageName: String,
             .setMessage(dialogMessage)
             .setPositiveButton(buttonText
             ) { _, _ ->
-                val openProviderIntent = Intent().apply {
+                val openAppStoreIntent = Intent().apply {
                     setClassName(launchPackage, launchClass)
                 }
                 try {
-                    startActivity(openProviderIntent)
+                    startActivity(openAppStoreIntent)
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Log.e("isPackageInstalled", "startActivity exception: " + e.message)
+                    if (launchClass == "ai.elimu.appstore.MainActivity") {
+                        val openDownloadPage = Intent(Intent.ACTION_VIEW,
+                            "https://github.com/elimu-ai/appstore/releases".toUri())
+                        try {
+                            startActivity(openDownloadPage)
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                            Log.e("isPackageInstalled", "Open AppStore release page exception: " + e.message)
+                        }
+                    }
                 }
             }
             .setCancelable(false)
