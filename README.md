@@ -1,4 +1,7 @@
 # common-utils
+
+[![](https://jitpack.io/v/ai.elimu/common-utils.svg)](https://jitpack.io/#ai.elimu/common-utils)
+
 This repository provides commonly shared functions being used across Android apps
 
 ## How to use TTS function?
@@ -16,7 +19,7 @@ So, make sure you have Hilt & kapt imported in your projects via below check-lis
    ```
 2. Add Hilt & `common-utils` dependencies in `app/build.gradle` file
    ```groovy
-   implementation 'com.github.elimu-ai:common-utils:1.0.1'
+   implementation 'ai.elimu:common-utils:1.0.1'
    implementation 'com.google.dagger:hilt-android:2.55'
    kapt 'com.google.dagger:hilt-compiler:2.55'
    ```
