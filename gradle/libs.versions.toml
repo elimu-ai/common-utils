@@ -28,7 +28,7 @@ kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-p
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 grgit = { group = "org.ajoberstar.grgit", name = "grgit-gradle", version.ref = "grgit" }
-elimu-model = { group = "com.github.elimu-ai", name = "model", version.ref = "elimuModel" }
-elimu-provider = { group = "com.github.elimu-ai", name = "content-provider", version.ref = "elimuProvider" }
+elimu-model = { group = "ai.elimu", name = "model", version.ref = "elimuModel" }
+elimu-provider = { group = "ai.elimu", name = "content-provider", version.ref = "elimuProvider" }
 
 [plugins]
