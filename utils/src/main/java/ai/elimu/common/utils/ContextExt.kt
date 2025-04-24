@@ -8,6 +8,11 @@ import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.core.net.toUri
 
+/**
+ * Checks if a package is installed on the device.
+ * If not, open a dialog redirecting users to another app by opening an activity
+ * represented by launchPackage and launchClass.
+ */
 fun Context.isPackageInstalled(packageName: String,
                                launchPackage: String,
                                launchClass: String,
