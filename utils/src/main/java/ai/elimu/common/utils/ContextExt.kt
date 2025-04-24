@@ -29,11 +29,11 @@ fun Context.isPackageInstalled(packageName: String,
             .setMessage(dialogMessage)
             .setPositiveButton(buttonText
             ) { _, _ ->
-                val openAppStoreIntent = Intent().apply {
+                val openDestinationApp = Intent().apply {
                     setClassName(launchPackage, launchClass)
                 }
                 try {
-                    startActivity(openAppStoreIntent)
+                    startActivity(openDestinationApp)
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Log.e("isPackageInstalled", "startActivity exception: " + e.message)
