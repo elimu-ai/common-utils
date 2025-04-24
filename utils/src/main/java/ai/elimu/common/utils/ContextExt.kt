@@ -13,11 +13,11 @@ import androidx.core.net.toUri
  * If not, open a dialog redirecting users to another app by opening an activity
  * represented by launchPackage and launchClass.
  */
-fun Context.isPackageInstalled(packageName: String,
-                               launchPackage: String,
-                               launchClass: String,
-                               dialogMessage: String,
-                               buttonText: String): Boolean {
+fun Context.ensurePackageInstalledOrPrompt(packageName: String,
+                                           launchPackage: String,
+                                           launchClass: String,
+                                           dialogMessage: String,
+                                           buttonText: String): Boolean {
     try {
         val packageInfoAppstore: PackageInfo =
             packageManager.getPackageInfo(packageName, 0)
