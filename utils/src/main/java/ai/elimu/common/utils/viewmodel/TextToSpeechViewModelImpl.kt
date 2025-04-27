@@ -62,9 +62,7 @@ class TextToSpeechViewModelImpl @Inject constructor(
      * @return {@link #ERROR} or {@link #SUCCESS} of <b>queuing</b> the speak operation.
      */
     override fun speak(text: CharSequence, queueMode: QueueMode, utteranceId: String) {
-        ioScope.launch {
-            textToSpeechRepository.speak(text, queueMode, utteranceId)
-        }
+        textToSpeechRepository.speak(text, queueMode, utteranceId)
     }
 
     /**

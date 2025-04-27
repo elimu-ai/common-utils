@@ -4,7 +4,7 @@ import ai.elimu.common.utils.data.model.tts.QueueMode
 import android.speech.tts.UtteranceProgressListener
 
 interface TextToSpeechRepository {
-    suspend fun speak(text: CharSequence, queueMode: QueueMode, utteranceId: String)
+    fun speak(text: CharSequence, queueMode: QueueMode, utteranceId: String)
     fun isSpeaking(): Boolean
     fun stop()
     fun setOnUtteranceProgressListener(listener: UtteranceProgressListener): Int
