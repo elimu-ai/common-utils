@@ -25,6 +25,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "common-utils"
+rootProject.name = "elimu.ai Common Utils"
 include ':app'
 include ':utils'
