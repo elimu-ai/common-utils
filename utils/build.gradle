@@ -7,9 +7,10 @@ plugins {
     id 'org.ajoberstar.grgit'
 }
 
-def libVersion = '1.0.13-SNAPSHOT'
-def group = "ai.elimu.common"
-def artifact = "utils"
+def utilsGroupId = "ai.elimu.common"
+def utilsArtifactId = "utils"
+def utilsVersionCode = 1000013
+def utilsVersionName = '1.0.13-SNAPSHOT'
 
 android {
     namespace 'ai.elimu.common.utils'
@@ -17,9 +18,8 @@ android {
 
     defaultConfig {
         minSdk 26
-
-        versionCode 1000013
-        versionName libVersion
+        versionCode utilsVersionCode
+        versionName utilsVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -66,9 +66,9 @@ dependencies {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = group
-            artifactId = artifact
-            version = libVersion
+            groupId = utilsGroupId
+            artifactId = utilsArtifactId
+            version = utilsVersionName
             afterEvaluate {
                 from(components["release"])
             }
