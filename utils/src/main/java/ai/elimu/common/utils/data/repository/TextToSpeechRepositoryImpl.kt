@@ -9,7 +9,7 @@ class TextToSpeechRepositoryImpl @Inject constructor(
     private val localDataSource: LocalTextToSpeechDataSource,
 ): TextToSpeechRepository {
 
-    override suspend fun speak(text: CharSequence, queueMode: QueueMode, utteranceId: String) {
+    override fun speak(text: CharSequence, queueMode: QueueMode, utteranceId: String) {
         localDataSource.speak(text, queueMode, utteranceId)
     }
 
