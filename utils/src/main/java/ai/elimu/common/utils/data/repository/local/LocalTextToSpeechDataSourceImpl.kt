@@ -11,7 +11,7 @@ class LocalTextToSpeechDataSourceImpl @Inject constructor(
     private val tts: TextToSpeech
 ) : LocalTextToSpeechDataSource {
 
-    override suspend fun speak(text: CharSequence, queueMode: QueueMode, utteranceId: String) {
+    override fun speak(text: CharSequence, queueMode: QueueMode, utteranceId: String) {
         val params = Bundle().apply {
             putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, utteranceId)
         }
