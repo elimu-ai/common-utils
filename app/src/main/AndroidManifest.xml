@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="${contentProviderApplicationId}.provider.READ" />
-
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"

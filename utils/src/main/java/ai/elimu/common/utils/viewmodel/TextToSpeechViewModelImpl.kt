@@ -18,33 +18,6 @@ class TextToSpeechViewModelImpl @Inject constructor(
 
 
     /**
-     * Warning: Do not use this function directly to set TTS language. Instead, to set custom TTS
-     * language for your app, implement {@link #LanguageProvider} and return the design language's
-     * isoCode in {@link #getLanguage()} function. Then, provide the implementation via Hilt Module.
-     *
-     * Below is an example:
-     * ```
-     * class LanguageProviderImpl @Inject constructor(): LanguageProvider {
-     *     override fun getLanguage(): String {
-     *         return ""
-     *     }
-     *
-     *     override fun getContentProviderId(): String {
-     *         return BuildConfig.CONTENT_PROVIDER_APPLICATION_ID
-     *     }
-     * }
-     * ....
-     *
-     * @Module
-     * @InstallIn(SingletonComponent::class)
-     * object DataModule {
-     *
-     *     @Provides
-     *     fun providesLanguageProvider(): LanguageProvider = LanguageProviderImpl()
-     * }
-     * ```
-     *
-     *
      * Speaks the text using the specified queuing strategy and speech parameters, the text may
      * be spanned with TtsSpans.
      * This method is asynchronous, i.e. the method just adds the request to the queue of TTS
