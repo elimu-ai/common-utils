@@ -55,10 +55,7 @@ So, make sure you have Hilt & kapt imported in your projects via below check-lis
 
 > [!IMPORTANT]
 > After you publish a new release, remember to also bump the version in all Android app repos that depend on the `utils` library:
-> * https://github.com/elimu-ai/launcher/blob/main/gradle/libs.versions.toml
-> * https://github.com/elimu-ai/kukariri/blob/main/gradle/libs.versions.toml
-> * https://github.com/elimu-ai/vitabu/blob/main/gradle/libs.versions.toml
-> * https://github.com/elimu-ai/filamu/blob/main/gradle/libs.versions.toml
+> * https://github.com/elimu-ai/appstore/blob/main/gradle/libs.versions.toml
 
 ---
 

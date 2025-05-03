@@ -20,14 +20,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            manifestPlaceholders = [contentProviderApplicationId: "ai.elimu.content_provider"]
-            buildConfigField("String", "CONTENT_PROVIDER_APPLICATION_ID", '"ai.elimu.content_provider"')
             signingConfig signingConfigs.debug
         }
 
         debug {
-            manifestPlaceholders = [contentProviderApplicationId: "ai.elimu.content_provider.debug"]
-            buildConfigField("String", "CONTENT_PROVIDER_APPLICATION_ID", '"ai.elimu.content_provider.debug"')
         }
 
     }
