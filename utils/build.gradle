@@ -9,8 +9,8 @@ plugins {
 
 def utilsGroupId = "ai.elimu"
 def utilsArtifactId = "common-utils"
-def utilsVersionCode = 1000013
-def utilsVersionName = '1.0.13-SNAPSHOT'
+def utilsVersionCode = 1000014
+def utilsVersionName = '1.0.14-SNAPSHOT'
 
 android {
     namespace 'ai.elimu.common.utils'
