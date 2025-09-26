@@ -11,7 +11,7 @@ import android.os.Bundle
  * @return The parcelable object, or null if not found.
  */
 fun <T> Bundle?.getParcelableCompat(key: String, clazz: Class<T>): T? {
-    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+    return if (Build.VERSION.SDK_INT >= 33) {
         this?.getParcelable(key, clazz)
     } else {
         @Suppress("DEPRECATION")
@@ -28,7 +28,7 @@ fun <T> Bundle?.getParcelableCompat(key: String, clazz: Class<T>): T? {
  */
 fun <T : android.os.Parcelable> Bundle?.getParcelableArrayListCompat(key: String, clazz: Class<T>)
         : java.util.ArrayList<T>? {
-    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+    return if (Build.VERSION.SDK_INT >= 33) {
         this?.getParcelableArrayList(key, clazz)
     } else {
         @Suppress("DEPRECATION")
