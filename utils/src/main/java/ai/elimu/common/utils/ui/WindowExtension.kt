@@ -10,7 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 fun Window.setLightStatusBar() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+    if (Build.VERSION.SDK_INT >= 30) {
         this.insetsController?.setSystemBarsAppearance(
             WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
             WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
@@ -21,7 +21,7 @@ fun Window.setLightStatusBar() {
 }
 
 fun Window.setStatusBarColorCompat(color: Int) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+    if (Build.VERSION.SDK_INT >= 35) {
 
         this.decorView.setBackgroundColor(ContextCompat.getColor(this.context, color))
 
