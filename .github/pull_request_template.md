@@ -24,9 +24,6 @@
 - [ ] I tested my changes on Android 12 (API 31)
 - [ ] I tested my changes on Android 11 (API 30)
 - [ ] I tested my changes on Android 10 (API 29)
-- [ ] I tested my changes on Android 9 (API 28)
-- [ ] I tested my changes on Android 8.1 (API 27)
-- [ ] I tested my changes on Android 8.0 (API 26)
 
 ### Screenshots
 <!-- If this PR affects the UI, please include before/after screenshots demonstrating the change(s). -->
